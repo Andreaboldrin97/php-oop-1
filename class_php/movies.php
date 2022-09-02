@@ -11,11 +11,12 @@ class Movie
 
     function __construct($_title, $_description, $_date, $_film_company, $_film_poster)
     {
-        $this->getTitle($_title);
-        $this->getDescription($_description);
-        $this->getDate($_date);
-        $this->getFilmCompany($_film_company);
-        $this->getFilmPoster($_film_poster);
+        // Creo le assegnazioni da fare
+        $this->title = $_title;
+        $this->description = $_description;
+        $this->date = $_date;
+        $this->film_company = $_film_company;
+        $this->film_poster = $_film_poster;
     }
 
     // Creo i method per le assegnazioni delle variabili d'istanza

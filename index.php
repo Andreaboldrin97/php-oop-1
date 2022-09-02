@@ -5,10 +5,10 @@ include __DIR__ . '/class_php/movies.php';
 // Creo l'array dei film :
 $movies = [];
 // aggiungo nell'array le careristiche dei film grazie al costrutto
-$movies[] = new movie('Iron Man', "Tony Stark è considerato da tutti un genio, un playboy, un filantropo e un inventore; in realtà è un uomo dalla personalità complessa, e dal “cuore ferito”. La storia di Iron Man, il Vendicatore Armato, diventa il simbolo dell'ingegno e della creatività umana, così come di una tragedia del tutto personale.", "2008", "Marvel Studios", "https://www.comicsuniverse.it/wp-content/uploads/2018/05/Iron-Man-movie-poster.jpg");
-$movies[] = new movie('Iron Man', "Tony Stark è considerato da tutti un genio, un playboy, un filantropo e un inventore; in realtà è un uomo dalla personalità complessa, e dal “cuore ferito”. La storia di Iron Man, il Vendicatore Armato, diventa il simbolo dell'ingegno e della creatività umana, così come di una tragedia del tutto personale.", "2008", "Marvel Studios", "https://www.comicsuniverse.it/wp-content/uploads/2018/05/Iron-Man-movie-poster.jpg");
-$movies[] = new movie('Iron Man', "Tony Stark è considerato da tutti un genio, un playboy, un filantropo e un inventore; in realtà è un uomo dalla personalità complessa, e dal “cuore ferito”. La storia di Iron Man, il Vendicatore Armato, diventa il simbolo dell'ingegno e della creatività umana, così come di una tragedia del tutto personale.", "2008", "Marvel Studios", "https://www.comicsuniverse.it/wp-content/uploads/2018/05/Iron-Man-movie-poster.jpg");
-$movies[] = new movie('Iron Man', "Tony Stark è considerato da tutti un genio, un playboy, un filantropo e un inventore; in realtà è un uomo dalla personalità complessa, e dal “cuore ferito”. La storia di Iron Man, il Vendicatore Armato, diventa il simbolo dell'ingegno e della creatività umana, così come di una tragedia del tutto personale.", "2008", "Marvel Studios", "https://www.comicsuniverse.it/wp-content/uploads/2018/05/Iron-Man-movie-poster.jpg");
+$movies[] = new Movie('Iron Man', "Tony Stark è considerato da tutti un genio, un playboy, un filantropo e un inventore; in realtà è un uomo dalla personalità complessa, e dal “cuore ferito”. La storia di Iron Man, il Vendicatore Armato, diventa il simbolo dell'ingegno e della creatività umana, così come di una tragedia del tutto personale.", "2008", "Marvel Studios", "https://www.comicsuniverse.it/wp-content/uploads/2018/05/Iron-Man-movie-poster.jpg");
+$movies[] = new Movie('Captain America: Il Primo Vendicatore', "Steve è un giovanotto smilzo che vuole ad ogni costo arruolarsi nell'esercito per combattere i nazisti. Putroppo viene regolarmente scartato, ma un giorno gli si presenta la possibilità di fare da cavia: gli iniettano così il siero del supersoldato.", "2011", "Marvel Studios", "https://pad.mymovies.it/filmclub/2008/06/089/locandina.jpg");
+$movies[] = new Movie('Avengers: Age of Ultron', "Gli Avengers si ricongiungono allo scopo di unire le proprie forze a quelle dei nuovi arrivati Quicksilver e Scarlet. Il fine è la lotta contro il robot malefico chiamato Ultron, creato da Tony Stark con intenzioni pacifiche ma trasformato in una macchina infernale assetata di sangue.", "2015", "Marvel Studios", "https://www.themoviedb.org/t/p/original/tTzs0sigsjYotvnlSz2FYq0tx6M.jpg");
+$movies[] = new Movie('Avengers: Endgame', "Alla deriva nello spazio senza cibo o acqua, Tony Stark vede la propria scorta di ossigeno diminuire di minuto in minuto. Nel frattempo, i restanti Vendicatori affrontano un epico scontro con Thanos.", "2019", "Marvel Studios", "https://static.posters.cz/image/1300/poster/avengers-endgame-journey-s-end-i122136.jpg");
 ?>
 
 
@@ -31,11 +31,12 @@ $movies[] = new movie('Iron Man', "Tony Stark è considerato da tutti un genio, 
 
                 <?php foreach ($movies as $movie) { ?>
                     <div class="card m-3 col-2">
-                        <img src="<?php echo $movie->getFilmPoster(); ?>" class="card-img-top" alt="<?php $movie->getTitle() ?>">
+                        <img src="<?php echo $movie->getFilmPoster(); ?>" class="card-img-top" alt="<?php echo $movie->getTitle() ?>">
                         <div class="card-body">
-                            <h3><?php echo $movie->getTitle() ?></h3>
-                            <p class="card-text"><?php $movie->getDescription() ?></p>
-                            <h5><?php $movie->getDate() ?></h5>
+                            <h5><?php echo $movie->getTitle() ?></h5>
+                            <p class="card-text"><?php echo $movie->getDescription() ?></p>
+                            <p class="card-text"><?php echo $movie->getFilmCompany() ?></p>
+                            <h5><?php echo $movie->getDate() ?></h5>
                         </div>
                     </div>
                 <?php } ?>
